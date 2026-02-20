@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 320px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 14px;
+      color: #333;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 16px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    .hint {
+      font-size: 11px;
+      color: #888;
+      margin-top: 4px;
+      margin-bottom: 12px;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background: #4285f4;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: #3367d6;
+    }
+    .status {
+      margin-top: 10px;
+      font-size: 12px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>🌐 QOJ 题目翻译器</h2>
+  <label for="apiKey">Gemini API Key</label>
+  <input type="text" id="apiKey" placeholder="输入你的 Gemini API Key">
+  <div class="hint">前往 <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a> 获取 API Key</div>
+
+  <label for="targetLang">目标语言</label>
+  <input type="text" id="targetLang" placeholder="例如：中文" value="中文">
+  <div class="hint">翻译的目标语言，默认为中文</div>
+
+  <button id="saveBtn">保存设置</button>
+  <div class="status" id="status"></div>
+</body>
+<script src="popup.js"></script>
+</html>

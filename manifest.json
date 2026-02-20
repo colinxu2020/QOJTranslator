@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "QOJ 题目翻译器",
+  "version": "1.3.0",
+  "description": "使用 Gemini 3 Flash 将 QOJ 题目的 PDF 题面翻译为中文并替换显示",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://qoj.ac/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://qoj.ac/problem/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["vendor/katex/katex.min.css", "vendor/katex/fonts/*"],
+      "matches": ["https://qoj.ac/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "QOJ 翻译设置"
+  }
+}
