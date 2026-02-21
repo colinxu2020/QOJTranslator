@@ -27,11 +27,17 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "qoj-translator@colinxu2020"
+      "id": "qoj-translator@colinxu2020",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   },
   "action": {
     "default_popup": "popup.html",
     "default_title": "QOJ 翻译设置"
+  },
+  "data_collection_permissions": {
+    "collectedDataTypes": []
   }
 }
